@@ -9,3 +9,11 @@ captures/
 *.hprof
 .DS_Store
 Thumbs.db
+
+# Local upload helpers (never commit)
+git-ca.pem
+.gh-token
+GhAuth.java
+GhAuth.class
+Probe.java
+Probe.class
