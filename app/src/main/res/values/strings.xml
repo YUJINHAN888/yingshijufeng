@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">光幕</string>
+    <string name="app_name_en">CINETRACK</string>
+    <string name="nav_discover">发现</string>
+    <string name="nav_search">搜索</string>
+    <string name="nav_watchlist">看单</string>
+    <string name="nav_profile">我的</string>
+    <string name="greeting">今晚，看点好的。</string>
+    <string name="greeting_sub">为你追踪正在发生的好电影</string>
+    <string name="search_hint">搜索电影、剧集、演员</string>
+    <string name="spotlight">SPOTLIGHT  /  本周焦点</string>
+    <string name="trending">本周热映</string>
+    <string name="trending_en">LOCAL SELECTION</string>
+    <string name="upcoming">即将上映</string>
+    <string name="upcoming_en">COMING SOON</string>
+    <string name="view_detail">查看详情</string>
+    <string name="step_badge">BUILD 01</string>
+    <string name="coming_step">即将开放</string>
+</resources>

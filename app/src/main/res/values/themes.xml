@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.CineTrack" parent="Theme.Material3.Dark.NoActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorOnPrimary">@color/on_primary</item>
+        <item name="colorPrimaryContainer">@color/primary_soft</item>
+        <item name="colorOnPrimaryContainer">@color/primary</item>
+        <item name="colorSecondary">@color/teal</item>
+        <item name="colorOnSecondary">@color/bg_deep</item>
+        <item name="colorSecondaryContainer">#225DD8CB</item>
+        <item name="colorSurface">@color/surface</item>
+        <item name="colorSurfaceVariant">@color/surface_high</item>
+        <item name="colorOnSurface">@color/text_primary</item>
+        <item name="colorOnSurfaceVariant">@color/text_secondary</item>
+        <item name="colorOutline">@color/outline</item>
+        <item name="android:colorBackground">@color/bg</item>
+        <item name="colorOnBackground">@color/text_primary</item>
+        <item name="android:windowBackground">@color/bg</item>
+        <item name="android:statusBarColor">@color/bg</item>
+        <item name="android:navigationBarColor">@color/bg</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="fontFamily">sans-serif</item>
+    </style>
+
+    <style name="TextAppearance.CineTrack.Headline" parent="TextAppearance.Material3.HeadlineSmall">
+        <item name="android:textSize">23sp</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:fontFamily">sans-serif-black</item>
+        <item name="android:letterSpacing">-0.01</item>
+    </style>
+
+    <style name="TextAppearance.CineTrack.Label" parent="TextAppearance.Material3.LabelSmall">
+        <item name="android:textSize">11sp</item>
+        <item name="android:textColor">@color/text_tertiary</item>
+        <item name="android:letterSpacing">0.12</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="Widget.CineTrack.BottomNav" parent="Widget.Material3.BottomNavigationView">
+        <item name="android:background">@color/bg</item>
+        <item name="itemIconTint">@color/nav_item_color</item>
+        <item name="itemTextColor">@color/nav_item_color</item>
+        <item name="labelVisibilityMode">labeled</item>
+        <item name="elevation">0dp</item>
+        <item name="itemActiveIndicatorStyle">@style/Widget.CineTrack.NavIndicator</item>
+    </style>
+
+    <style name="Widget.CineTrack.NavIndicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="android:color">@color/primary_soft</item>
+    </style>
+
+    <style name="Widget.CineTrack.Button" parent="Widget.Material3.Button">
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="cornerRadius">14dp</item>
+        <item name="android:minHeight">42dp</item>
+    </style>
+</resources>
