@@ -13,7 +13,12 @@ Thumbs.db
 # Local upload helpers (never commit)
 git-ca.pem
 .gh-token
+.pat.txt
 GhAuth.java
+GhAuth2.java
+ApiCheck.java
 GhAuth.class
+GhAuth2.class
+ApiCheck.class
 Probe.java
 Probe.class
