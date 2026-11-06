@@ -3,6 +3,8 @@ build/
 app/build/
 local.properties
 .idea/
+.android/
+Androidcinema/
 *.iml
 captures/
 *.log
