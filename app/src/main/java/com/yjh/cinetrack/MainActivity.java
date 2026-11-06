@@ -17,6 +17,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.snackbar.Snackbar;
+import com.yjh.cinetrack.ui.ApiKeyDialog;
 import com.yjh.cinetrack.ui.DiscoverFragment;
 import com.yjh.cinetrack.ui.PlaceholderFragment;
 
@@ -132,6 +133,13 @@ public class MainActivity extends AppCompatActivity {
 
     public void openDiscover() {
         selectTab(TAG_DISCOVER);
+    }
+
+    public void showApiKeyDialog() {
+        ApiKeyDialog.show(this, () -> {
+            Fragment fragment = getSupportFragmentManager().findFragmentByTag(TAG_DISCOVER);
+            if (fragment instanceof DiscoverFragment) ((DiscoverFragment) fragment).reload();
+        });
     }
 
     public void showRoadmapMessage(String message) {

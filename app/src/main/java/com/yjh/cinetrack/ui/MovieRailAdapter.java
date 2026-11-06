@@ -10,7 +10,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.yjh.cinetrack.R;
-import com.yjh.cinetrack.data.DemoMovie;
+import com.yjh.cinetrack.data.Movie;
+import com.yjh.cinetrack.image.NetworkImageLoader;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,10 +19,10 @@ import java.util.Locale;
 
 public class MovieRailAdapter extends RecyclerView.Adapter<MovieRailAdapter.ViewHolder> {
     public interface OnMovieClick {
-        void onMovieClick(DemoMovie movie);
+        void onMovieClick(Movie movie);
     }
 
-    private final List<DemoMovie> items = new ArrayList<>();
+    private final List<Movie> items = new ArrayList<>();
     private final boolean showReleaseDate;
     private final OnMovieClick listener;
 
@@ -30,7 +31,7 @@ public class MovieRailAdapter extends RecyclerView.Adapter<MovieRailAdapter.View
         this.listener = listener;
     }
 
-    public void submit(List<DemoMovie> movies) {
+    public void submit(List<Movie> movies) {
         items.clear();
         if (movies != null) items.addAll(movies);
         notifyDataSetChanged();
@@ -45,10 +46,15 @@ public class MovieRailAdapter extends RecyclerView.Adapter<MovieRailAdapter.View
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        DemoMovie movie = items.get(position);
+        Movie movie = items.get(position);
         holder.title.setText(movie.title);
         holder.meta.setText(movie.metaLine());
-        holder.poster.setImageResource(movie.posterRes);
+        if (movie.demo && movie.posterRes != 0) {
+            holder.poster.setImageResource(movie.posterRes);
+        } else {
+            NetworkImageLoader.load(holder.poster, movie.posterUrl(),
+                    R.drawable.bg_poster_placeholder);
+        }
 
         if (movie.score > 0) {
             holder.score.setVisibility(View.VISIBLE);

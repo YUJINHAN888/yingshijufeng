@@ -50,6 +50,17 @@
                     android:textSize="9sp" />
             </LinearLayout>
 
+            <ImageButton
+                android:id="@+id/btn_api"
+                android:layout_width="38dp"
+                android:layout_height="38dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/bg_circle_dark"
+                android:contentDescription="@string/connect_tmdb"
+                android:padding="9dp"
+                android:src="@drawable/ic_key"
+                app:tint="@color/text_secondary" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -125,6 +136,84 @@
                 android:text="STEP 03"
                 android:textColor="@color/primary"
                 android:textSize="9sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/api_banner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/bg_soft_card"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="14dp"
+            android:visibility="gone">
+
+            <FrameLayout
+                android:layout_width="38dp"
+                android:layout_height="38dp"
+                android:background="@drawable/bg_circle_dark">
+
+                <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_gravity="center"
+                    android:contentDescription="@null"
+                    android:src="@drawable/ic_key"
+                    app:tint="@color/primary" />
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="11dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/api_banner_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="@string/connect_tmdb"
+                    android:textColor="@color/text_primary"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/api_banner_desc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:maxLines="2"
+                    android:text="@string/connect_tmdb_desc"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="10sp" />
+            </LinearLayout>
+
+            <ProgressBar
+                android:id="@+id/sync_progress"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_marginStart="8dp"
+                android:indeterminateTint="@color/primary"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/api_banner_action"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/bg_step_badge"
+                android:fontFamily="sans-serif-medium"
+                android:paddingStart="9dp"
+                android:paddingTop="5dp"
+                android:paddingEnd="9dp"
+                android:paddingBottom="5dp"
+                android:text="@string/configure"
+                android:textColor="@color/primary"
+                android:textSize="10sp" />
         </LinearLayout>
 
         <TextView
@@ -271,10 +360,11 @@
             </LinearLayout>
 
             <TextView
+                android:id="@+id/trending_source"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-medium"
-                android:text="本地示例"
+                android:text="@string/local_source"
                 android:textColor="@color/text_tertiary"
                 android:textSize="11sp" />
         </LinearLayout>
@@ -316,10 +406,11 @@
             </LinearLayout>
 
             <TextView
+                android:id="@+id/upcoming_source"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-medium"
-                android:text="示例定档"
+                android:text="@string/upcoming_local"
                 android:textColor="@color/text_tertiary"
                 android:textSize="11sp" />
         </LinearLayout>
@@ -339,7 +430,7 @@
             android:layout_marginTop="24dp"
             android:gravity="center"
             android:letterSpacing="0.1"
-            android:text="CINETRACK  /  STEP 01  /  FOUNDATION"
+            android:text="@string/step_footer"
             android:textColor="@color/outline"
             android:textSize="8sp" />
     </LinearLayout>
