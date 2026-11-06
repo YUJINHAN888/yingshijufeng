@@ -1,6 +1,17 @@
+import java.util.Properties
+
 plugins {
     id("com.android.application")
 }
+
+val localProps = Properties()
+val localPropsFile = rootProject.file("local.properties")
+if (localPropsFile.exists()) {
+    localPropsFile.inputStream().use { localProps.load(it) }
+}
+val tmdbApiKey = (localProps.getProperty("TMDB_API_KEY")
+    ?: System.getenv("TMDB_API_KEY")
+    ?: "").trim().replace("\\", "\\\\").replace("\"", "\\\"")
 
 android {
     namespace = "com.yjh.cinetrack"
@@ -11,8 +22,9 @@ android {
         applicationId = "com.yjh.cinetrack"
         minSdk = 26
         targetSdk = 37
-        versionCode = 1
-        versionName = "0.1.0-step01"
+        versionCode = 2
+        versionName = "0.2.0-step02"
+        buildConfigField("String", "TMDB_API_KEY", "\"$tmdbApiKey\"")
     }
 
     signingConfigs {
@@ -36,6 +48,10 @@ android {
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
+    }
+
+    buildFeatures {
+        buildConfig = true
     }
 }
 
